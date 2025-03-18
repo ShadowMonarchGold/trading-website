@@ -1,6 +1,10 @@
-from django.apps import AppConfig
+from flask import Flask
 
+app = Flask(__name__)
 
-class HelloConfig(AppConfig):
-    default_auto_field = "django.db.models.BigAutoField"
-    name = "hello"
+@app.route('/')
+def home():
+    return "Trading Website (Setting Up Candle Data Soon)"
+
+if __name__ == '__main__':
+    app.run(debug=True)
